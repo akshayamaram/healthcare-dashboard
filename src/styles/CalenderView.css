@@ -1,0 +1,504 @@
+
+.calendar-wrapper {
+  font-family: 'Inter', system-ui, sans-serif;
+  width: 41.5%;
+  height: 100%;
+  padding: 10px 24px 24px;
+  background: linear-gradient(135deg, #faf6ff 0%, #f4f0ff 100%);
+}
+
+.calendar-container {
+  padding: 0px;
+}
+
+/* Header Styles */
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.calendar-month {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.calendar-nav-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.calendar-nav-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #6366f1;
+  transition: background-color 0.2s;
+}
+
+.calendar-nav-button:hover {
+  background-color: #e0e7ff;
+}
+
+/* Calendar Grid Styles */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  margin-bottom: 5px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.calendar-cell {
+  padding: 16px 12px;
+  text-align: center;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar-cell.active {
+  background-color: #e0e7ff;
+}
+
+.calendar-cell.past {
+  color: #9ca3af;
+}
+
+.calendar-day {
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.calendar-cell.past .calendar-day {
+  color: #9ca3af;
+}
+
+.calendar-date {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.calendar-cell.past .calendar-date {
+  color: #9ca3af;
+}
+
+.calendar-appointments {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+/* Appointment Slot Styles */
+.appointment-slot {
+  font-size: 11px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  position: relative;
+  color: #64748b;
+  text-align: center;
+}
+
+.appointment-slot.current {
+  background-color: #3736A8;
+  color: white;
+  font-weight: 500;
+}
+
+.appointment-slot.scheduled {
+  background-color: #AAAAD4;
+  color: white;
+  font-weight: 500;
+}
+
+.appointment-dot {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 8px;
+  color: white;
+}
+
+/* Appointment Cards Styles */
+.appointment-cards-container {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-top: 2vh;
+  margin-left: 2.7vh;
+}
+
+.appointment-card {
+  padding: 8px;
+  border-radius: 12px;
+  width: fit-content;
+  flex: 1;
+}
+
+.appointment-card.dentist {
+  background-color: #3734a9;
+  color: white;
+}
+
+.appointment-card.physiotherapy {
+  background-color: #dde2f9;
+  color: #2d3748;
+}
+
+.appointment-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  justify-content: space-between;
+}
+
+.appointment-icon {
+  font-size: 18px;
+}
+
+.appointment-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.appointment-time {
+  font-size: 12px;
+  margin-bottom: 4px;
+  opacity: 0.9;
+}
+
+.appointment-card.physiotherapy .appointment-time {
+  opacity: 0.8;
+}
+
+.appointment-doctor {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.appointment-card.physiotherapy .appointment-doctor {
+  opacity: 0.7;
+}
+
+/* Upcoming Schedule Styles */
+.upcoming-container {
+  padding: 15px 5px 0px 10px;
+  height: fit-content;
+  background: linear-gradient(135deg, #faf6ff 0%, #f4f0ff 100%);
+}
+
+.upcoming-heading {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.upcoming-day-group {
+  margin-bottom: 6px;
+}
+
+.upcoming-day {
+  font-size: 12px;
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 12px;
+}
+
+.upcoming-appointments {
+  display: flex;
+  gap: 12px;
+}
+
+.upcoming-card {
+  width: fit-content;
+  background-color: #dde2f9;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  margin-left: 1vh;
+}
+
+.upcoming-card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.upcoming-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0E0E50;
+}
+
+.icon-check {
+  color: #48bb78;
+}
+
+.upcoming-time {
+  font-size: 12px;
+  color: #0E0E50;
+}
+
+
+/* Mobile Styles - 768px and below */
+@media screen and (max-width: 768px) {
+  
+  .calendar-wrapper {
+    width: 100%;
+    height: auto;
+    padding: 16px;
+  }
+  
+  .calendar-container {
+    padding: 0;
+  }
+  
+  .calendar-header {
+    margin-bottom: 16px;
+    padding: 0 4px;
+  }
+  
+  .calendar-month {
+    font-size: 20px;
+  }
+  
+  .calendar-nav-button {
+    padding: 6px;
+    font-size: 14px;
+  }
+  
+  .calendar-grid {
+    gap: 2px;
+    margin-bottom: 16px;
+  }
+  
+  .calendar-cell {
+    padding: 8px 4px;
+    min-height: 80px;
+  }
+  
+  .calendar-day {
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+  
+  .calendar-date {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .appointment-slot {
+    font-size: 9px;
+    padding: 2px 4px;
+    margin-bottom: 2px;
+  }
+  
+  .appointment-dot {
+    font-size: 6px;
+  }
+  
+  .appointment-cards-container {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+    margin-left: 0;
+    padding: 0 4px;
+  }
+  
+  .appointment-card {
+    padding: 12px;
+    width: 100%;
+  }
+  
+  .appointment-title {
+    font-size: 13px;
+  }
+  
+  .appointment-time {
+    font-size: 11px;
+  }
+  
+  .appointment-doctor {
+    font-size: 12px;
+  }
+  
+  .appointment-icon {
+    font-size: 16px;
+  }
+  
+  .upcoming-container {
+    padding: 16px 8px;
+    margin-top: 20px;
+  }
+  
+  .upcoming-heading {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .upcoming-day-group {
+    margin-bottom: 16px;
+  }
+  
+  .upcoming-day {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+  
+  .upcoming-appointments {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .upcoming-card {
+    width: 100%;
+    margin-left: 0;
+    padding: 12px;
+  }
+  
+  .upcoming-title {
+    font-size: 12px;
+  }
+  
+  .upcoming-time {
+    font-size: 11px;
+  }
+}
+
+/* Mobilee  - 480px and below */
+@media screen and (max-width: 480px) {
+  
+  .calendar-wrapper {
+    padding: 12px;
+  }
+  
+  .calendar-month {
+    font-size: 18px;
+  }
+  
+  .calendar-nav-button {
+    padding: 4px;
+    font-size: 12px;
+  }
+  
+  .calendar-cell {
+    padding: 6px 2px;
+    min-height: 70px;
+  }
+  
+  .calendar-day {
+    font-size: 9px;
+    margin-bottom: 10px;
+  }
+  
+  .calendar-date {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .calendar-appointments {
+    gap: 20px;
+  }
+  
+  .appointment-slot {
+    font-size: 8px;
+    padding: 1px 3px;
+  }
+  
+  .appointment-card {
+    padding: 10px;
+  }
+  
+  .appointment-title {
+    font-size: 12px;
+  }
+  
+  .appointment-time {
+    font-size: 10px;
+  }
+  
+  .appointment-doctor {
+    font-size: 11px;
+  }
+  
+  .upcoming-container {
+    padding: 12px 6px;
+  }
+  
+  .upcoming-heading {
+    font-size: 15px;
+  }
+  
+  .upcoming-day {
+    font-size: 10px;
+  }
+  
+  .upcoming-title {
+    font-size: 11px;
+  }
+  
+  .upcoming-time {
+    font-size: 10px;
+  }
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  
+  .calendar-cell {
+    min-height: 85px;
+    padding: 10px 6px;
+  }
+  
+  .calendar-date {
+    font-size: 15px;
+  }
+  
+  .appointment-slot {
+    font-size: 9px;
+  }
+  
+  .appointment-card {
+    padding: 14px;
+  }
+  
+  .upcoming-container {
+    padding: 14px 8px;
+  }
+}
+
+/* Tablet Styles - 769px to 1024px */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  
+  .calendar-wrapper {
+    width: 50%;
+    padding: 12px 20px 20px;
+  }
+  
+  .calendar-cell {
+    min-height: 100px;
+    padding: 14px 10px;
+  }
+  
+  .appointment-cards-container {
+    margin-left: 1.5vh;
+  }
+}

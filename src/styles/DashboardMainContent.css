@@ -1,0 +1,496 @@
+
+.main-content {
+  background-color: #f8f8ff;
+  width: 41.5%;
+  height: 100%;
+  padding: 20px 24px 24px;
+  overflow-y: hidden;
+}
+
+.overview-feed-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8vh;
+}
+
+.dashboard-overview {
+  width: 100%;
+  height: 60%; 
+}
+
+.anatomy-section {
+  width: 100%;
+  height: 100%;
+}
+
+.titles {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.titles h3 {
+  color: #0E0E50;
+}
+
+.titles h6 {
+  color: #3736A8;
+}
+
+.anatomy-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 3vh;
+  justify-content: center;
+}
+
+.anatomy-figure-wrapper {
+  width: 60%;
+  height: 90%;
+  background: linear-gradient(135deg, #faf6ff 0%, #f4f0ff 100%);
+  border-radius: 2vh;
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+}
+
+.magnify {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.anatomy-figure-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.scan-icon {
+  position: absolute;
+  font-size: 55px;
+  color: #4f46e5;
+}
+
+.health-label-heart {
+  position: absolute;
+  background-color: #3736A8;
+  color: white;
+  font-size: 11px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.health-label-leg {
+  position: absolute;
+  background-color: #01DFEF;
+  color: white;
+  font-size: 11px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Heart Placement */
+.heart-icon {
+  top: 55px;
+  right: 110px;
+}
+
+.heart-label {
+  top: 55px;
+  right: -3px;
+}
+
+/* Leg Placement */
+.leg-icon {
+  bottom: 85px;
+  left: 105px;
+}
+
+.leg-label {
+  bottom: 80px;
+  left: -5px;
+}
+
+/* Health Status Cards */
+.health-status-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1vh;
+}
+
+.health-card {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  background: linear-gradient(135deg, #faf6ff 0%, #f4f0ff 100%);
+  border-radius: 12px;
+}
+
+.health-icon {
+  color: #718096;
+  font-size: 5vh;
+  margin-right: 1vh;
+}
+
+.health-info h4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #2d3748;
+  margin-bottom: 4px;
+}
+
+.health-date {
+  font-size: 10px;
+  color: #a0aec0;
+  margin-bottom: 8px;
+}
+
+.health-progress {
+  width: 100px;
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 70%;
+  background: #e53e3e;
+  border-radius: 2px;
+}
+
+.health-progress.good .progress-bar {
+  background: #48bb78;
+}
+
+.activity-feed {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  height: 10%;
+  width: 100%;
+}
+
+.activity-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 4px;
+}
+
+.activity-header p {
+  font-size: 14px;
+  color: #718096;
+}
+
+.activity-chart {
+  display: flex;
+  align-items: end;
+  gap: 16px;
+  height: 120px;
+}
+
+.chart-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.chart-bar {
+  width: 20px;
+  background: linear-gradient(180deg, #4fd1c7 0%, #3182ce 100%);
+  border-radius: 4px 4px 0 0;
+  min-height: 20px;
+}
+
+.chart-day {
+  font-size: 12px;
+  color: #718096;
+}
+
+
+
+/* Mobile Styles - 768px and below */
+@media screen and (max-width: 768px) {
+  
+  .sidebar {
+    display: none;
+  }
+  
+  .main-content {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding: 16px;
+    overflow-y: auto;
+  }
+  
+  .overview-feed-wrapper {
+    height: auto;
+    min-height: 100vh;
+    gap: 24px;
+    justify-content: flex-start;
+  }
+  
+  .dashboard-overview {
+    width: 100%;
+    height: auto;
+    min-height: 60vh;
+  }
+  
+  .anatomy-section {
+    height: auto;
+  }
+  
+  .titles {
+    margin-bottom: 16px;
+  }
+  
+  .titles h3 {
+    font-size: 20px;
+  }
+  
+  .titles h6 {
+    font-size: 14px;
+  }
+  
+  .anatomy-container {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+  }
+  
+  .anatomy-figure-wrapper {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .scan-icon {
+    font-size: 24px;
+  }
+  
+  .health-label-heart,
+  .health-label-leg {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+  
+  .heart-icon {
+    top: 40px;
+    right: 60px;
+  }
+  
+  .heart-label {
+    top: 42px;
+    right: -10px;
+  }
+  
+  .leg-icon {
+    bottom: 60px;
+    left: 55px;
+  }
+  
+  .leg-label {
+    bottom: 60px;
+    left: -8px;
+  }
+  
+  .health-status-cards {
+    width: 100%;
+    gap: 12px;
+  }
+  
+  .health-card {
+    padding: 12px;
+  }
+  
+  .health-icon {
+    font-size: 3vh;
+    margin-right: 12px;
+  }
+  
+  .health-info h4 {
+    font-size: 14px;
+  }
+  
+  .health-date {
+    font-size: 10px;
+  }
+  
+  .health-progress {
+    width: 80px;
+  }
+  
+  .activity-feed {
+    width: 100%;
+    height: auto;
+    min-height: 150px;
+    margin-top: 20px;
+  }
+  
+  .activity-header {
+    height: auto;
+    margin-bottom: 16px;
+  }
+  
+  .activity-header h3 {
+    font-size: 16px;
+  }
+  
+  .activity-header p {
+    font-size: 12px;
+  }
+  
+  .activity-chart {
+    height: 100px;
+    gap: 8px;
+  }
+  
+  .chart-bar {
+    width: 16px;
+  }
+  
+  .chart-day {
+    font-size: 10px;
+  }
+}
+
+/* Mobile  - 480px and below */
+@media screen and (max-width: 480px) {
+  
+  .main-content {
+    padding: 12px;
+  }
+  
+  .overview-feed-wrapper {
+    gap: 20px;
+  }
+  
+  .titles h3 {
+    font-size: 18px;
+  }
+  
+  .titles h6 {
+    font-size: 12px;
+  }
+  
+  .anatomy-figure-wrapper {
+    height: 250px;
+  }
+  
+  .health-card {
+    padding: 10px;
+  }
+  
+  .health-icon {
+    font-size: 2.5vh;
+    margin-right: 8px;
+  }
+  
+  .health-info h4 {
+    font-size: 13px;
+  }
+  
+  .activity-chart {
+    height: 80px;
+    gap: 6px;
+  }
+  
+  .chart-bar {
+    width: 12px;
+  }
+  /* Heart Placement */
+  .heart-icon {
+    top: 55px;
+    right: 150px;
+  }
+
+  .heart-label {
+    top: 55px;
+    right: 50px;
+  }
+
+  /* Leg Placement */
+  .leg-icon {
+    bottom: 95px;
+    left: 145px;
+  }
+
+  .leg-label {
+    bottom: 93px;
+    left: 53px;
+  }
+}
+
+
+/* Tablet Styles - 769px to 1024px */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  
+  .sidebar {
+    width: 20%;
+  }
+  
+  .main-content {
+    width: 80%;
+    padding: 18px 20px 20px;
+  }
+  
+  .anatomy-figure-wrapper {
+    width: 55%;
+  }
+  
+  .health-status-cards {
+    gap: 1.5vh;
+  }
+  
+  .health-icon {
+    font-size: 4vh;
+  }
+}
+
+/* Large Mobile/Small Tablet - 481px to 768px */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  
+  .anatomy-figure-wrapper {
+    height: 320px;
+  }
+  
+  .health-card {
+    padding: 14px;
+  }
+  
+  .activity-chart {
+    height: 110px;
+  }
+  
+  .chart-bar {
+    width: 18px;
+  }
+}
